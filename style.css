@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -11,10 +10,10 @@ body {
     display: flex;
 }
 
-/* Навигационное меню (sidebar) */
+/* Стили для меню (sidebar) */
 .sidebar {
     width: 200px;
-    background-color: #ffcc00; /* Жёлтый фон, как в комиксах */
+    background-color: #ffcc00; /* Жёлтый фон */
     padding: 20px;
     position: fixed;
     height: 100%;
@@ -26,53 +25,51 @@ body {
 }
 
 .sidebar ul li {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .sidebar ul li a {
     text-decoration: none;
     color: #000;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
     display: block;
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #ff3333; /* Красный фон при наведении */
+    background-color: #ff3333; /* Красный при наведении */
     color: #fff;
 }
 
 .sidebar ul li a.active {
-    background-color: #ff3333; /* Красный фон для активного раздела */
+    background-color: #ff3333; /* Красный для активного пункта */
     color: #fff;
 }
 
-/* Основной контейнер */
+/* Контейнер с текстом */
 .container {
-    margin-left: 220px; /* Отступ под sidebar */
+    margin-left: 220px; /* Отступ под меню */
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Стиль текста в комикс-стиле */
+/* Стили для текста в комикс-стиле */
 .comic-text {
     position: relative;
     text-align: center;
 }
 
 .comic-text h1 {
+    font-family: 'Arial', sans-serif;
     font-size: 48px;
     color: #ff3333; /* Красный текст */
-    -webkit-text-stroke: 2px #000; /* Обводка текста */
+    -webkit-text-stroke: 2px #000; /* Чёрная обводка */
     text-transform: uppercase;
-    position: relative;
-    z-index: 1;
 }
 
 /* Кружки и линии вокруг текста */
@@ -80,27 +77,24 @@ body {
 .comic-text::after {
     content: '';
     position: absolute;
-    z-index: 0;
 }
 
 .comic-text::before {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    border: 5px dotted #ffcc00; /* Жёлтые пунктирные кружки */
+    width: 80px;
+    height: 80px;
+    border: 4px dotted #ffcc00; /* Жёлтый пунктирный круг */
     border-radius: 50%;
-    top: -30px;
-    left: -50px;
+    top: -20px;
+    left: -40px;
 }
 
 .comic-text::after {
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border: 5px solid #000; /* Чёрные линии */
+    width: 60px;
+    height: 60px;
+    border: 4px solid #000; /* Чёрный квадрат-ромб */
     transform: rotate(45deg);
-    bottom: -40px;
-    right: -40px;
+    bottom: -30px;
+    right: -30px;
 }
 
 /* Адаптация под мобилку */
@@ -128,20 +122,20 @@ body {
     }
 
     .comic-text h1 {
-        font-size: 32px; /* Уменьшаем текст на мобилке */
+        font-size: 32px;
     }
 
     .comic-text::before {
-        width: 60px;
-        height: 60px;
-        top: -20px;
-        left: -30px;
+        width: 50px;
+        height: 50px;
+        top: -15px;
+        left: -20px;
     }
 
     .comic-text::after {
-        width: 50px;
-        height: 50px;
-        bottom: -30px;
-        right: -30px;
+        width: 40px;
+        height: 40px;
+        bottom: -20px;
+        right: -20px;
     }
 }
